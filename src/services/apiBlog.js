@@ -2,7 +2,7 @@ import api from "@/api";
 
 export async function getBlogs(page) {
   try {
-    const response = await api.get(`blogs?page=${page}`);
+    const response = await api.get(`/blogs?page=${page}/`);
     return response.data;
   } catch (err) {
     throw new Error(err.message);
@@ -11,7 +11,7 @@ export async function getBlogs(page) {
 
 export async function getBlog(id) {
   try {
-    const response = await api.get(`blogs/${id}`);
+    const response = await api.get(`/blogs/${id}/`);
     return response.data;
   } catch (err) {
     console.error("API error while fetching blog:", err);
@@ -21,7 +21,7 @@ export async function getBlog(id) {
 
 export async function registerUser(data){
   try{
-    const response = await api.post("register_user/",data);
+    const response = await api.post("/register_user/",data);
     return response.data;
 
   } catch(err){
@@ -36,7 +36,7 @@ export async function registerUser(data){
 
 export async function login(data){
   try{
-    const response = await api.post("token/", data)
+    const response = await api.post("/token/", data)
     return response.data
   }
   catch(err){
@@ -49,7 +49,7 @@ export async function login(data){
 
 export async function getUsername() {
   try {
-    const response = await api.get("get_username");
+    const response = await api.get("/get_username/");
     return response.data;
   } catch (err) {
     throw new Error(err.message);
@@ -59,7 +59,7 @@ export async function getUsername() {
 
 export async function getCategory() {
   try {
-    const response = await api.get("category/");
+    const response = await api.get("/category/");
     return response.data;
   } catch (err) {
     console.error("Error fetching category:", err);
@@ -69,7 +69,7 @@ export async function getCategory() {
 
 export async function createCategory(category) {
   try {
-    const response = await api.post("category/", { category });
+    const response = await api.post("/category/", { category });
     return response.data;
   } catch (err) {
     console.error("Error creating category:", err);
@@ -79,7 +79,7 @@ export async function createCategory(category) {
 
 export async function createBlog(data) {
   try {
-    const response = await api.post("blogs/create/", data);
+    const response = await api.post("/blogs/create/", data);
     return response.data;
   } catch (err) {
     throw new Error(err.message);
@@ -88,7 +88,7 @@ export async function createBlog(data) {
 
 export async function updateBlog(data, id){
   try{
-    const response = await api.put(`blogs/update/${id}/`, data)
+    const response = await api.put(`/blogs/update/${id}/`, data)
     return response.data
   }
 
@@ -103,7 +103,7 @@ export async function updateBlog(data, id){
 
 export async function deleteBlog(id){
   try{
-    const response = await api.post(`blogs/delete/${id}/`)
+    const response = await api.post(`/blogs/delete/${id}/`)
     return response.data
   }
   catch(err){
@@ -117,7 +117,7 @@ export async function deleteBlog(id){
 
 export async function getUserInfo(username){
   try{
-    const response = await api.get(`user/info/${username}`)
+    const response = await api.get(`/user/info/${username}/`)
     return response.data
   }
   catch(err){
@@ -127,7 +127,7 @@ export async function getUserInfo(username){
 
 export async function updateProfile(data) {
   try {
-    const response = await api.put(`updateprofile/`, data);
+    const response = await api.put(`/updateprofile/`, data);
     return response.data;
   } catch (err) {
     console.log(err)
@@ -143,7 +143,7 @@ export async function updateProfile(data) {
 
 export async function likeBlog(blogId) {
   try {
-    const response = await api.post(`blogs/${blogId}/like/`);
+    const response = await api.post(`/blogs/${blogId}/like/`);
     return response.data;
   } catch (err) {
     console.error("Error liking blog:", err);
