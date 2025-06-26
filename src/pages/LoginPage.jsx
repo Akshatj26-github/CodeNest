@@ -15,23 +15,32 @@ const LoginPage = ({ setIsAuthenticated, setUsername }) => {
 
   const mutation = useMutation({
     mutationFn: (data) => login(data),
-    onSuccess: (response) => {
-      localStorage.setItem("access", response.access);
-      localStorage.setItem("refresh", response.refresh);
-      setIsAuthenticated(true);
-      getUsername().then((res) => setUsername(res.username));
-      toast.success("You have successfully signed up!!");
-      const from = location?.state?.from?.pathname || "/";
-      navigate(from, { replace: true });
+    onSuccess: async (response) => {
+      try {
+        localStorage.setItem("access", response.access);
+        localStorage.setItem("refresh", response.refresh);
+
+        const res = await getUsername();
+        setUsername(res.username);
+        setIsAuthenticated(true);
+
+        toast.success("You have successfully signed in!");
+
+        const from = location?.state?.from?.pathname || "/";
+        navigate(from, { replace: true });
+      } catch (err) {
+        console.error("Login success but getUsername failed:", err);
+        toast.error("Login successful, but user info fetch failed.");
+      }
     },
     onError: (err) => {
-      toast.error(err.message);
+      toast.error(err.message || "Login failed");
     },
   });
 
-  function onSubmit(data) {
+  const onSubmit = (data) => {
     mutation.mutate(data);
-  }
+  };
 
   return (
     <form
@@ -91,7 +100,8 @@ const LoginPage = ({ setIsAuthenticated, setUsername }) => {
         >
           {mutation.isPending ? (
             <>
-              <SmallSpinner /> <small className="text-[16px]">Signing in...</small>
+              <SmallSpinner />
+              <small className="text-[16px]">Signing in...</small>
             </>
           ) : (
             <small className="text-[16px]">Signin</small>
