@@ -49,12 +49,18 @@ export async function login(data){
 
 export async function getUsername() {
   try {
-    const response = await api.get("/get_username/");
+    const token = localStorage.getItem("access");
+    const response = await api.get("/get_username/", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return response.data;
   } catch (err) {
     throw new Error(err.message);
   }
 }
+
 
 
 export async function getCategory() {
