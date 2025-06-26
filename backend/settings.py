@@ -45,9 +45,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -160,7 +160,8 @@ EMAIL_SSL_CERTFILE = None
 EMAIL_SSL_KEYFILE = None
 EMAIL_TIMEOUT = None
 
-
 CORS_ALLOWED_ORIGINS = [
-    "https://codenest-p4s3.onrender.com",
+    "https://codenest-p4s3.onrender.com", 
 ]
+
+CORS_ALLOW_CREDENTIALS = True
