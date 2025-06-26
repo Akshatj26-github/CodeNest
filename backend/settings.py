@@ -160,9 +160,7 @@ EMAIL_SSL_CERTFILE = None
 EMAIL_SSL_KEYFILE = None
 EMAIL_TIMEOUT = None
 
-CORS_ALLOWED_ORIGINS = [
-    "https://codenest-p4s3.onrender.com", 
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_CREDENTIALS = True
 
