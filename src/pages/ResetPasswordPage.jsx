@@ -11,7 +11,7 @@ function ResetPasswordPage() {
 
   const handleReset = async () => {
   try {
-    await axios.post(`http://127.0.0.1:8000/api/auth/password-reset-confirm/${uidb64}/${token}/`, {
+    await axios.post(`https://codenest-backend.onrender.com/auth/password-reset-confirm/${uidb64}/${token}/`, {
         password: password,
     });
     toast.success("Password reset Successful!!");

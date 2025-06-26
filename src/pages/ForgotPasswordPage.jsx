@@ -11,7 +11,7 @@ export default function ForgotPasswordPage() {
     e.preventDefault();
     setIsLoading(true); 
     try {
-      await axios.post("http://127.0.0.1:8000/api/auth/request-reset-email/", {
+      await axios.post("https://codenest-backend.onrender.com/api/auth/request-reset-email/", {
         email,
       });
       setMsg("Check your email for a reset link.");
