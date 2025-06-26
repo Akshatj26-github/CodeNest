@@ -162,5 +162,5 @@ EMAIL_TIMEOUT = None
 
 
 CORS_ALLOWED_ORIGINS = [
-"https://codenest-p4s3.onrender.com/"
+    "https://codenest-p4s3.onrender.com",
 ]
