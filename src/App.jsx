@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BlogContainer from "./ui_components/BlogContainer";
 import AppLayout from "./ui_components/AppLayout";
-import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailsPage";
 import ProfilePage from "./pages/ProfilePage";
 import Faq from './pages/Faq';
@@ -16,6 +15,7 @@ import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import SearchPage from "./pages/SearchPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 import NotFoundPage from "./pages/NotFOundPage";
+import HomePage from "./pages/HomePage";
 
 const queryclient = new QueryClient()
 
