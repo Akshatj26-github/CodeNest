@@ -2,7 +2,7 @@ import api from "@/api";
 
 export async function getBlogs(page) {
   try {
-    const response = await api.get(`/blogs?page=${page}/`);
+    const response = await api.get(`/blogs?page=${page}`);
     return response.data;
   } catch (err) {
     throw new Error(err.message);
@@ -11,7 +11,7 @@ export async function getBlogs(page) {
 
 export async function getBlog(id) {
   try {
-    const response = await api.get(`/blogs/${id}/`);
+    const response = await api.get(`/blogs/${id}`);
     return response.data;
   } catch (err) {
     console.error("API error while fetching blog:", err);
@@ -88,7 +88,7 @@ export async function createBlog(data) {
 
 export async function updateBlog(data, id){
   try{
-    const response = await api.put(`/blogs/update/${id}/`, data)
+    const response = await api.put(`/blogs/update/${id}`, data)
     return response.data
   }
 
@@ -103,7 +103,7 @@ export async function updateBlog(data, id){
 
 export async function deleteBlog(id){
   try{
-    const response = await api.post(`/blogs/delete/${id}/`)
+    const response = await api.post(`/blogs/delete/${id}`)
     return response.data
   }
   catch(err){
@@ -117,7 +117,7 @@ export async function deleteBlog(id){
 
 export async function getUserInfo(username){
   try{
-    const response = await api.get(`/user/info/${username}/`)
+    const response = await api.get(`/user/info/${username}`)
     return response.data
   }
   catch(err){
