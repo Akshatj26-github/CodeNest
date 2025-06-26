@@ -3,24 +3,24 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 function ResetPasswordPage() {
   const { uidb64, token } = useParams();
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-//   console.log("Reset token:", uidb64, token);
 
   const handleReset = async () => {
-  try {
-    await axios.post(`https://codenest-backend.onrender.com/auth/password-reset-confirm/${uidb64}/${token}/`, {
+    try {
+      await axios.post(`${BACKEND_URL}/auth/password-reset-confirm/${uidb64}/${token}/`, {
         password: password,
-    });
-    toast.success("Password reset Successful!!");
-    navigate("/login");
-  } catch (err) {
-    toast.error(err.message);
-  }
-};
-
+      });
+      toast.success("Password reset Successful!!");
+      navigate("/login");
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
 
   return (
     <div>

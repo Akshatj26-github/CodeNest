@@ -2,16 +2,18 @@ import { useState } from "react";
 import axios from "axios";
 import SmallSpinner from "@/ui_components/SmallSpinner";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
   const [msg, setMsg] = useState("");
-  const [isLoading, setIsLoading] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true); 
+    setIsLoading(true);
     try {
-      await axios.post("https://codenest-backend.onrender.com/api/auth/request-reset-email/", {
+      await axios.post(`${BACKEND_URL}/api/auth/request-reset-email/`, {
         email,
       });
       setMsg("Check your email for a reset link.");
@@ -23,7 +25,7 @@ export default function ForgotPasswordPage() {
         setMsg("Something went wrong.");
       }
     } finally {
-      setIsLoading(false); 
+      setIsLoading(false);
     }
   };
 
@@ -43,11 +45,11 @@ export default function ForgotPasswordPage() {
         disabled={isLoading}
       >
         {isLoading ? (
-            <span className="text-base flex items-center gap-2 justify-center">
-                <SmallSpinner /> <small>Sending...</small>
-            </span>
-            ) : (
-            <small className="text-base">Send Reset Link</small>
+          <span className="text-base flex items-center gap-2 justify-center">
+            <SmallSpinner /> <small>Sending...</small>
+          </span>
+        ) : (
+          <small className="text-base">Send Reset Link</small>
         )}
       </button>
       {msg && <p className="text-base text-green-600">{msg}</p>}
