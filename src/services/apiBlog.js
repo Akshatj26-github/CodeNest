@@ -36,7 +36,7 @@ export async function registerUser(data){
 
 export async function login(data){
   try{
-    const response = await api.post("/token/", data)
+    const response = await api.post("/token", data)
     return response.data
   }
   catch(err){
@@ -50,7 +50,7 @@ export async function login(data){
 export async function getUsername() {
   try {
     const token = localStorage.getItem("access");
-    const response = await api.get("/get_username/", {
+    const response = await api.get("/get_username", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -94,7 +94,7 @@ export async function createBlog(data) {
 
 export async function updateBlog(data, id){
   try{
-    const response = await api.put(`/blogs/update/${id}`, data)
+    const response = await api.put(`/blogs/update/${id}/`, data)
     return response.data
   }
 
@@ -109,7 +109,7 @@ export async function updateBlog(data, id){
 
 export async function deleteBlog(id){
   try{
-    const response = await api.post(`/blogs/delete/${id}`)
+    const response = await api.post(`/blogs/delete/${id}/`)
     return response.data
   }
   catch(err){
