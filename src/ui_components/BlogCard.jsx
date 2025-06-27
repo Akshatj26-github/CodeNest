@@ -14,7 +14,7 @@ const BlogCard = ({ blog }) => {
 
   const hasValidImage = blog.featured_image && cleanPath.trim() !== "";
   const imageUrl = hasValidImage ? `${cleanPath}` : defaultBanner;
-
+  console.log(imageUrl);
   const [isLiked, setIsLiked] = useState(blog.is_liked || false);
   const [likeCount, setLikeCount] = useState(blog.total_likes || 0);
   const [loading, setLoading] = useState(false);
