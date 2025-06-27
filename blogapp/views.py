@@ -10,7 +10,6 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.pagination import PageNumberPagination
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
-from rest_framework.permissions import AllowAny
 
 @api_view(["POST"])
 def register_user(request):
@@ -34,18 +33,12 @@ class BlogListPagination(PageNumberPagination):
     page_size = 6  # A number to control items per page
 
 @api_view(["GET"])
-@permission_classes([AllowAny]) 
 def blog_list(request):
-    try:
-        blogs = Blog.objects.all()
-        paginator = BlogListPagination()
-        paginated_blogs = paginator.paginate_queryset(blogs, request)
-        serializer = BlogSerializer(paginated_blogs, many=True, context={"request": request}) 
-        return paginator.get_paginated_response(serializer.data)
-    except Exception as e:
-        import traceback
-        traceback.print_exc()  
-        return Response({"error": str(e)}, status=500)
+    blogs = Blog.objects.all()
+    paginator = BlogListPagination()
+    paginated_blogs = paginator.paginate_queryset(blogs, request)
+    serializer = BlogSerializer(paginated_blogs, many=True, context={"request": request}) 
+    return paginator.get_paginated_response(serializer.data)
 
 
 
