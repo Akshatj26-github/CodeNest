@@ -11,7 +11,7 @@ const CardFooter = ({blog}) => {
         <div className="flex items-center gap-2">
             <img
             src={blog.author.profile_picture ? 
-              `${BASE_URL}${blog.author.profile_picture}` : defaultProfile}
+              `${blog.author.profile_picture}` : defaultProfile}
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = defaultProfile;

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import BlogContainer from "@/ui_components/BlogContainer";
 import BlogCard from "@/ui_components/BlogCard";
-export const BASE_URL = "http://127.0.0.1:8000";
+export const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const SearchPage = () => {
   const [searchParams] = useSearchParams();
