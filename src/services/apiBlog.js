@@ -34,30 +34,35 @@ export async function registerUser(data){
   }
 }
 
-export async function login(data){
-  try{
-    const response = await api.post("/token", data)
-    return response.data
-  }
-  catch(err){
-    if(err.status===401){
-      throw new Error("Invalid Credentials")
+export async function login(data) {
+  try {
+    const response = await api.post("/token", data);
+    return response.data;
+  } catch (err) {
+    if (err.response && err.response.status === 401) {
+      throw new Error("Invalid Credentials");
     }
-    throw new Error(err)
+    throw new Error("Login failed: " + err.message);
   }
 }
+
 
 export async function getUsername() {
   try {
     const token = localStorage.getItem("access");
+    if (!token) {
+      throw new Error("No access token found");
+    }
+
     const response = await api.get("/get_username", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
+
     return response.data;
   } catch (err) {
-    throw new Error(err.message);
+    throw new Error("Fetching username failed: " + err.message);
   }
 }
 
