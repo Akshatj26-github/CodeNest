@@ -80,7 +80,7 @@ const DetailPage = ({username,isAuthenticated}) => {
         <div className="w-full h-[350px] my-9 overflow-hidden rounded-sm">
           <img
                       src={blog.featured_image ? 
-                        `${BASE_URL}${blog.featured_image}` : defaultProfile}
+                        `${blog.featured_image}` : defaultProfile}
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = defaultProfile;

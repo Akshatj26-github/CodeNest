@@ -12,7 +12,7 @@ const BlogWriter = ({blog}) => {
           <div className="w-[40px] h-[40px] rounded-full overflow-hidden">
             <img
                         src={blog.author.profile_picture ? 
-                          `${blog.author.profile_picture}` : defaultProfile}
+                          `${BASE_URL}${blog.author.profile_picture}` : defaultProfile}
                         onError={(e) => {
                           e.target.onerror = null;
                           e.target.src = defaultProfile;
