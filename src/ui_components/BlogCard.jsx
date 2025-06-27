@@ -13,7 +13,7 @@ const BlogCard = ({ blog }) => {
     : blog.featured_image;
 
   const hasValidImage = blog.featured_image && cleanPath.trim() !== "";
-  const imageUrl = hasValidImage ? `${BASE_URL}${cleanPath}` : defaultBanner;
+  const imageUrl = hasValidImage ? `${cleanPath}` : defaultBanner;
 
   const [isLiked, setIsLiked] = useState(blog.is_liked || false);
   const [likeCount, setLikeCount] = useState(blog.total_likes || 0);
