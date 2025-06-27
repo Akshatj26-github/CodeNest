@@ -36,7 +36,7 @@ export async function registerUser(data){
 
 export async function login(data) {
   try {
-    const response = await api.post("/token", data);
+    const response = await api.post("token", data);
     return response.data;
   } catch (err) {
     if (err.response && err.response.status === 401) {
