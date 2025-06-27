@@ -51,7 +51,7 @@ export async function getUsername() {
   try {
     const token = localStorage.getItem("access");
     if (!token) {
-      throw new Error("No access token found");
+      throw new Error("No access token found. Please log in again.");
     }
 
     const response = await api.get("/get_username", {
