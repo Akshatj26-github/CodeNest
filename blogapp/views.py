@@ -51,6 +51,8 @@ def get_blog(request, pk):
 
 #Lets now start CRUD(Create Read Update Delete) operations....
 
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def create_blog(request):
     user = request.user 
     data = request.data.copy()
