@@ -1,9 +1,9 @@
 # 🪺 CodeNest — Full-Stack Blogging Platform
 
-[![Made with React](https://reactjs.org/)
-[![Made with Django](https://www.djangoproject.com/)
-[![Tailwind CSS](https://tailwindcss.com/)
-[![Live Demo](https://codenest-project.onrender.com/)
+[![Made with React](https://img.shields.io/badge/Made%20with-React-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![Made with Django](https://img.shields.io/badge/Backend-Django-success?style=for-the-badge&logo=django)](https://www.djangoproject.com/)
+[![Tailwind CSS](https://img.shields.io/badge/UI-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-purple?style=for-the-badge)](https://codenest-project.onrender.com/)
 
 > A feature-rich, responsive blogging platform built with **React**, **Django**, and **Django REST Framework**, allowing users to create, edit, and explore blogs with modern UI/UX.
 
@@ -13,7 +13,7 @@
 ✅ Forgot password via email system  
 ✅ Create, Read, Update, Delete (CRUD) blogs  
 ✅ Like system for blogs  
-✅ Search blogs by title, author, category, or likes  
+✅ Search blogs by title, author, category
 ✅ Category-wise blog filtering  
 ✅ Edit user profile  
 ✅ Responsive UI with light/dark mode toggle  
