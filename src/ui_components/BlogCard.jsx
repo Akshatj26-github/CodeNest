@@ -8,12 +8,10 @@ import { BASE_URL } from '@/api';
 import { likeBlog } from "@/services/apiBlog";
 
 const BlogCard = ({ blog }) => {
-  const cleanPath = blog.featured_image?.startsWith('/')
-    ? blog.featured_image.slice(1)
-    : blog.featured_image;
+  const imageUrl = blog.featured_image
+  ? `${BASE_URL}${blog.featured_image}`
+  : defaultBanner;
 
-  const hasValidImage = blog.featured_image && cleanPath.trim() !== "";
-  const imageUrl = hasValidImage ? `${cleanPath}` : defaultBanner;
   console.log(imageUrl);
   const [isLiked, setIsLiked] = useState(blog.is_liked || false);
   const [likeCount, setLikeCount] = useState(blog.total_likes || 0);
@@ -35,15 +33,15 @@ const BlogCard = ({ blog }) => {
   return (
     <div className="px-3 py-3 rounded-md w-[300px] h-auto flex flex-col gap-4 dark:border-gray-800 border shadow-lg">
       <div className="w-full h-[200px] border rounded-md overflow-hidden">
-        <img
-          src={`${imageUrl}`}
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = defaultBanner;
-          }}
-          className="w-full h-full object-cover rounded-lg"
-          alt="Blog thumbnail"
-        />
+       <img
+        src={imageUrl}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = defaultBanner;
+        }}
+        className="w-full h-full object-cover rounded-lg"
+        alt="Blog thumbnail"
+      />
       </div>
 
       <Badge blog={blog} />
