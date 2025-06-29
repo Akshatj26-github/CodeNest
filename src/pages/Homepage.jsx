@@ -29,6 +29,7 @@ const HomePage = () => {
   function decreasePageValue() {
     setPage((curr) => curr - 1);
   }
+  console.log("Blogs on home:", blogs);
 
   return (
     <>
