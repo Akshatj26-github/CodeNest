@@ -1,9 +1,9 @@
 # 🪺 CodeNest — Full-Stack Blogging Platform
 
-[![Made with React](https://img.shields.io/badge/Made%20with-React-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
-[![Made with Django](https://img.shields.io/badge/Backend-Django-success?style=for-the-badge&logo=django)](https://www.djangoproject.com/)
-[![Tailwind CSS](https://img.shields.io/badge/UI-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Live Demo](https://img.shields.io/badge/Live-Demo-purple?style=for-the-badge)](https://codenest-project.onrender.com/)
+[![Made with React](https://reactjs.org/)
+[![Made with Django](https://www.djangoproject.com/)
+[![Tailwind CSS](https://tailwindcss.com/)
+[![Live Demo](https://codenest-project.onrender.com/)
 
 > A feature-rich, responsive blogging platform built with **React**, **Django**, and **Django REST Framework**, allowing users to create, edit, and explore blogs with modern UI/UX.
 
@@ -28,18 +28,12 @@
 
 ---
 
-## 📸 Screenshots
-
-| Home Page (Dark) | Create Blog | Search Blogs |
-|------------------|-------------|--------------|
-| ![Home] | ![Create] | ![Search] |
-
 
 ## 🛠️ Tech Stack
 
 - **Frontend**: React.js, Tailwind CSS, Axios  
 - **Backend**: Django, Django REST Framework  
-- **Database**: PostgreSQL  
+- **Database**: SQLite3 (default Django database)  
 - **Deployment**: Render
 
 ---
@@ -54,20 +48,12 @@
 
 ---
 
-## 📂 Setup Instructions
+## 📌 Future Enhancements
 
-```bash
-# Clone the repo
-git clone https://github.com/Akshatj26-github/CodeNest.git
-cd CodeNest
+Planned features to make CodeNest more interactive, personalized, and production-ready:
 
-# Backend setup
-cd backend
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
+- **Blog Commenting System** – Allow users to engage in discussions under blog posts.
+- **Most Liked & Trending Blogs** – Highlight top-performing blogs based on likes and engagement.
+- **Weekly Blog Digest via Email** – Deliver a weekly roundup of top or personalized blogs to users' inboxes.
+- **Bookmark / Save for Later** – Let users save blogs to revisit later.
 
-# Frontend setup
-cd ../frontend
-npm install
-npm start
