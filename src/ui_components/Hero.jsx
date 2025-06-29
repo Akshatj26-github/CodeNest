@@ -5,6 +5,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaYoutube } from "react-icons/fa";
 import { BASE_URL } from "@/api";
 import { HiPencilAlt } from "react-icons/hi";
+import defaultProfile from "../images/pic.jpg";
 
 const Hero = ({userInfo,authusername,toggleModal }) => {
   return (
@@ -12,7 +13,9 @@ const Hero = ({userInfo,authusername,toggleModal }) => {
     <div className="flex gap-4">
       <div className="w-[70px] h-[70px] rounded-full overflow-hidden">
         <img
-          src={`${BASE_URL}${userInfo?.profile_picture}`}
+          src={userInfo.profile_picture
+                  ? `${BASE_URL}${userInfo.profile_picture}`
+                  : defaultProfile}
           className="w-[70px] h-[70px] rounded-full object-cover"
         />
       </div>

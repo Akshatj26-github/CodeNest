@@ -5,14 +5,16 @@ import { Link } from "react-router-dom";
 import defaultProfile from "../images/pic.jpg";
 
 const BlogWriter = ({blog}) => {
+   const imageUrl = blog.author.profile_picture
+          ? `${BASE_URL}${blog.author.profile_picture}`
+          : defaultProfile;
   return (
     <Link to={`/profile/${blog.author.username}`}>
         <div className="flex items-center gap=4 ">
         <span className="flex items-center gap-2">
           <div className="w-[40px] h-[40px] rounded-full overflow-hidden">
             <img
-                        src={blog.author.profile_picture ? 
-                          `${BASE_URL}${blog.author.profile_picture}` : defaultProfile}
+                        src={imageUrl}
                         onError={(e) => {
                           e.target.onerror = null;
                           e.target.src = defaultProfile;

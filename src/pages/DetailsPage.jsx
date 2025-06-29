@@ -11,7 +11,7 @@ import Modal from "@/ui_components/Modal";
 import CreatePostPage from "./CreatePostPage";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import defaultProfile from "../images/detailBanner.jpg";
+import defaultBanner from "../images/detailBanner.jpg";
 
 const DetailPage = ({username,isAuthenticated}) => {
 
@@ -79,11 +79,12 @@ const DetailPage = ({username,isAuthenticated}) => {
 
         <div className="w-full h-[350px] my-9 overflow-hidden rounded-sm">
           <img
-                      src={blog.featured_image ? 
-                        `${blog.featured_image}` : defaultProfile}
+                      src={blog.featured_image
+                        ? `${BASE_URL}${blog.featured_image}`
+                        : defaultBanner}
                       onError={(e) => {
                         e.target.onerror = null;
-                        e.target.src = defaultProfile;
+                        e.target.src = defaultBanner;
                       }}
                       alt="Author"
                      className="w-full h-full object-cover rounded-sm"
