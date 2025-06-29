@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import defaultProfile from "../images/pic.jpg";
 
 const CardFooter = ({blog}) => {
-  const imageUrl = blog.author.profile_picture
-        ? `${BASE_URL}${blog.author.profile_picture}`
-        : defaultProfile;
+  const imageUrl =
+  blog.author?.profile_picture && blog.author.profile_picture.trim() !== ""
+    ? blog.author.profile_picture
+    : defaultProfile;
+
   return (
     <Link to={`/profile/${blog.author.username}`}>
         <div className="flex items-center justify-between mt-2">

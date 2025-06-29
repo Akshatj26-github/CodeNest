@@ -8,9 +8,8 @@ import { BASE_URL } from '@/api';
 import { likeBlog } from "@/services/apiBlog";
 
 const BlogCard = ({ blog }) => {
-  const imageUrl = blog.featured_image
-  ? `${BASE_URL}${blog.featured_image}`
-  : defaultBanner;
+  const imageUrl = blog.featured_image && blog.featured_image.trim() !== "" ? 
+                    blog.featured_image : defaultBanner;
 
   console.log(imageUrl);
   const [isLiked, setIsLiked] = useState(blog.is_liked || false);
