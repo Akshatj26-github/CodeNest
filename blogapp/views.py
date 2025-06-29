@@ -1,4 +1,4 @@
-from datetime import timezone
+from django.utils import timezone
 from django.shortcuts import render
 from .models import Blog,Category
 from django.contrib.auth import get_user_model
