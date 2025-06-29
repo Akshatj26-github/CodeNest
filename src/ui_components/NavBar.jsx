@@ -30,7 +30,7 @@ const NavBar = ({ darkMode, handleDarkMode, isAuthenticated, username, setUserna
       <nav className="max-container px-10 py-6 flex justify-between items-center gap-6 sticky top-0 z-7 bg-white dark:bg-[#141624] shadow-md">
         {/* App Name */}
         <Link to="/" className="text-[#1a1a1a] text-3xl font-bold dark:text-white">
-          🪺CodeNest
+          CodeNest
         </Link>
 
         {/* Search Form */}

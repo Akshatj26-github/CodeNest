@@ -31,7 +31,7 @@ const ProfilePage = ({authusername}) => {
   return (
     <>
       <Hero userInfo={data} authusername={authusername}  toggleModal={toggleModal} />
-      <BlogContainer blogs={blogs} title={`🪺 ${username}'s Posts`} />
+      <BlogContainer blogs={blogs} title={`${username}'s Posts`} />
       {showModal && (
         <Modal toggleModal={toggleModal}>
           <SignupPage userInfo={data} updateForm={true} toggleModal={toggleModal} />
