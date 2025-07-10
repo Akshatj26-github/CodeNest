@@ -45,7 +45,10 @@ class SimpleAuthorSerializer(serializers.ModelSerializer):
 
 class BlogSerializer(serializers.ModelSerializer):
     author = SimpleAuthorSerializer(read_only=True)
-    category = serializers.StringRelatedField()
+    category = serializers.SlugRelatedField(
+        slug_field='name',
+        queryset=Category.objects.all()
+    )
     total_likes = serializers.SerializerMethodField()
     is_liked = serializers.SerializerMethodField()
 
