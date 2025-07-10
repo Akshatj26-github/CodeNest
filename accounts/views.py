@@ -14,7 +14,7 @@ class RequestPasswordResetEmail(APIView):
     def post(self, request):
         try:
             email = request.data.get("email")
-            frontend_url = request.data.get("frontend_url", "http://localhost:5173")
+            frontend_url = request.data.get("frontend_url", "https://codenest-project.onrender.com")
             print("Received email:", email)
             print("Frontend URL:", frontend_url)
 
@@ -30,7 +30,7 @@ class RequestPasswordResetEmail(APIView):
             send_mail(
                 subject="Reset your password",
                 message=f"Click here to reset your password: {reset_link}",
-                from_email=None,
+                from_email=settings.EMAIL_HOST_USER,
                 recipient_list=[email],
                 fail_silently=False,
             )

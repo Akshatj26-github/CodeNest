@@ -15,6 +15,7 @@ export default function ForgotPasswordPage() {
     try {
       await axios.post(`${BACKEND_URL}/api/auth/request-reset-email/`, {
         email,
+        frontend_url: "https://codenest-project.onrender.com",  
       });
       setMsg("Check your email for a reset link.");
     } catch (err) {
