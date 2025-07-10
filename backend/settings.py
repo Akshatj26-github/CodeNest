@@ -26,12 +26,16 @@ SECRET_KEY = 'django-insecure-+xfdqmroulmm-cn(cmbt3)oqu36i3z$mc&fp5$ug9@b)rr8lk+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "codenest-backend-api.onrender.com",
+    "codenest-project.onrender.com",
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'rest_framework',
     'django.contrib.auth',
@@ -41,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blogapp',
     'accounts',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -162,7 +165,9 @@ EMAIL_SSL_CERTFILE = None
 EMAIL_SSL_KEYFILE = None
 EMAIL_TIMEOUT = None
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://codenest-project.onrender.com",
+]
 
 CORS_ALLOW_CREDENTIALS = True
 

@@ -15,6 +15,7 @@ const PagePagination = ({
   increasePageValue,
 }) => {
   const numbers = Array.from({ length: numOfPages }, (_, i) => i + 1);
+  //Creates an array and maps 0->1 , 1->2 and so on to diaplay it 
   const firstNumber = numbers[0];
   const lastNumber = numbers[numbers.length - 1];
 
