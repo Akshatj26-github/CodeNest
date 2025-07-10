@@ -153,12 +153,12 @@ SIMPLE_JWT = {
 
 # Optional SMTP authentication information for EMAIL_HOST.
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'noreply@example.com'
+DEFAULT_FROM_EMAIL = 'CodeNest <noreply@codenest.com>'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'avjsince2004@gmail.com'
-EMAIL_HOST_PASSWORD = 'ssnv cjzy sfgp cdrq'
+EMAIL_HOST_PASSWORD = 'bthd lufr nzgm kqay'
 
 
 EMAIL_SSL_CERTFILE = None
