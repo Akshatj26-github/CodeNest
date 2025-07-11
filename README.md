@@ -7,18 +7,20 @@
 
 > A feature-rich, responsive blogging platform built with **React**, **Django**, and **Django REST Framework**, allowing users to create, edit, and explore blogs with modern UI/UX.
 
+---
+
 ## ⚙️Features
 
-✅ Full user authentication (login, register, logout)  
-✅ Forgot password via email system  
-✅ Create, Read, Update, Delete (CRUD) blogs  
-✅ Like system for blogs  
-✅ Edit user profile  
-✅ Responsive UI with light/dark mode toggle  
-✅ REST API integration using Django REST Framework  
-✅ Deployed on Render
-✅ Category-wise blog filtering 
-✅ Search blogs by title, author, category 
+1. Full user authentication: Register, Login, Logout
+2. Forgot password system via email
+3. Edit user profile
+4. Create, Read, Update, Delete (CRUD) blogs
+5. Like system for blogs
+6. Search blogs by title, author, category
+7. Filter blogs category-wise
+8. Responsive UI with Light/Dark mode toggle
+9. REST API powered by Django REST Framework
+10. Live deployment on Render
 ---
 
 ## 🌐 Live Demo
