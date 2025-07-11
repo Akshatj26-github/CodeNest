@@ -12,14 +12,13 @@
 ✅ Full user authentication (login, register, logout)  
 ✅ Forgot password via email system  
 ✅ Create, Read, Update, Delete (CRUD) blogs  
-✅ Category-wise blog filtering 
 ✅ Like system for blogs  
-✅ Search blogs by title, author, category 
 ✅ Edit user profile  
 ✅ Responsive UI with light/dark mode toggle  
 ✅ REST API integration using Django REST Framework  
 ✅ Deployed on Render
-
+✅ Category-wise blog filtering 
+✅ Search blogs by title, author, category 
 ---
 
 ## 🌐 Live Demo
