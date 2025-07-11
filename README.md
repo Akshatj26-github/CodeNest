@@ -32,7 +32,7 @@
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React.js, Tailwind CSS, Axios  
+- **Frontend**: React.js, Tailwind CSS, Axios, ShadCN/UI  
 - **Backend**: Django, Django REST Framework  
 - **Database**: SQLite3 (default Django database)  
 - **Deployment**: Render
